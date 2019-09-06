@@ -19,7 +19,7 @@ import static com.example.todolist.Utils.isValidDescription;
 public class TodoService {
 
     @Autowired
-    ToDoRepository todoRepository;
+    private ToDoRepository todoRepository;
 
     @Transactional(readOnly = true)
     public List<ToDoItem> getAllToDoItems() {

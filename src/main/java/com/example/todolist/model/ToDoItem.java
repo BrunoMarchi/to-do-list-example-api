@@ -1,9 +1,7 @@
 package com.example.todolist.model;
 
 import com.example.todolist.exceptions.InvalidDescriptionException;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -11,7 +9,9 @@ import static com.example.todolist.Utils.isValidDescription;
 
 @Entity
 @Data
+@Builder
 @NoArgsConstructor
+@AllArgsConstructor
 public class ToDoItem {
     @ToString.Exclude
     @Id

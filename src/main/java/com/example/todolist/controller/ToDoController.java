@@ -21,7 +21,7 @@ import java.util.Optional;
 public class ToDoController {
 
     @Autowired
-    TodoService todoService;
+    private TodoService todoService;
 
     @GetMapping
     @ResponseBody
@@ -46,7 +46,7 @@ public class ToDoController {
     }
 
     @PutMapping(value = "/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Void> modifyToDoItem(@PathVariable long id, @RequestBody ToDoItem toDoItem) throws URISyntaxException, InvalidDescriptionException {
+    public ResponseEntity<?> modifyToDoItem(@PathVariable long id, @RequestBody ToDoItem toDoItem) throws URISyntaxException, InvalidDescriptionException {
         log.info(String.format("Request - PUT - Update or Create: %s", toDoItem));
         long identifier = todoService.updateOrCreateToDoItem(id, toDoItem);
         return ResponseEntity
@@ -55,9 +55,9 @@ public class ToDoController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteToDoItem(@PathVariable long id) {
+    public ResponseEntity<?> deleteToDoItem(@PathVariable long id) {
         log.info(String.format("Request - DELETE - Item: %d", id));
         todoService.deleteToDoItem(id);
-        return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 }
