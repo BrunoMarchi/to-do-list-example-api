@@ -5,6 +5,7 @@ It's also currently configured to run in Docker.
 ## Running
 Set the database username and password in application.properties:
 > spring.datasource.username=**your database user**
+>
 > spring.datasource.password=**your database password**
 
 Create the database, the name used was **todo_list** which can be changed in application.properties:
