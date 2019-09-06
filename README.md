@@ -8,10 +8,23 @@ Set the database username and password in application.properties:
 > spring.datasource.password=**your database password**
 
 Create the database, the name used was **todo_list** which can be changed in application.properties:
-> spring.datasource.ur
+> spring.datasource.url
+
+Two profiles are provided:
+> local
+> docker
+
+local is the default profile and docker is used in dockerfile
 ### Running in local machine
-To run in your local machine change the spring.datasource.url in the properties file and build it using your preferred method
+You can build using the defauld profile and your preferred method (e.g. Maven, IntelliJ, etc.)
+Just set the database username and password in application-local.properties:
+> spring.datasource.username=**your database user**
+> spring.datasource.password=**your database password**
 ### Docker
+For docker just set the database username and password in application-docker.properties:
+> spring.datasource.username=**your database user**
+> spring.datasource.password=**your database password**
+
 To build a Docker image
 > docker build -t docker-spring-to-do-api .
 
@@ -46,3 +59,12 @@ Get Specific Metric:
 >Example:
 >
 > curl -X GET http://127.0.0.1:9090/metrics/http.server.requests
+
+## To Do
+- Add pagination to repository
+- Add filtering by status to repository
+- Deploy in Kubernetes
+- Better logs and add logging level
+- Integration Tests
+- Create a simple automated test, maybe using Postman?
+- Try to use something (Flyway or Liquibase) to create the database for the first time
