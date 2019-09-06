@@ -59,7 +59,7 @@ Get Specific Metric:
 >
 > curl -X GET http://127.0.0.1:9090/metrics/http.server.requests
 
-## To Do
+## Improvements
 - Add pagination to repository
 - Add filtering by status to repository
 - Deploy in Kubernetes
