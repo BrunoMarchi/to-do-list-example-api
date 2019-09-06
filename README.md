@@ -3,16 +3,12 @@ This is an example of a To Do List API build using Spring Boot, with Spring Actu
 Database of choice was MariaDB, which was installed on the local machine. To change it modify the application.properties and pom.xml dependency accordingly.
 It's also currently configured to run in Docker.
 ## Running
-Set the database username and password in application.properties:
-> spring.datasource.username=**your database user**
->
-> spring.datasource.password=**your database password**
-
 Create the database, the name used was **todo_list** which can be changed in application.properties:
 > spring.datasource.url
 
 Two profiles are provided:
 > local
+>
 > docker
 
 local is the default profile and docker is used in dockerfile
@@ -20,10 +16,12 @@ local is the default profile and docker is used in dockerfile
 You can build using the defauld profile and your preferred method (e.g. Maven, IntelliJ, etc.)
 Just set the database username and password in application-local.properties:
 > spring.datasource.username=**your database user**
+>
 > spring.datasource.password=**your database password**
 ### Docker
 For docker just set the database username and password in application-docker.properties:
 > spring.datasource.username=**your database user**
+>
 > spring.datasource.password=**your database password**
 
 To build a Docker image
