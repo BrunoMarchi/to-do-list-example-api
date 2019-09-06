@@ -41,7 +41,7 @@ Create entry:
 > curl -X POST http://127.0.0.1:9090/todo -H "Content-Type: application/json" -d "{\"description\" : \"test\"}"
 
 Update existing entry, if it does not exist create a new one:
-> curl -X PUT http://127.0.0.1:9090/todo/{id} -H "Content-Type: application/json" -d "{\"description\" : \"test\", \"description\": \"changed description\"}"
+> curl -X PUT http://127.0.0.1:9090/todo/{id} -H "Content-Type: application/json" -d "{\"status\" : \"pending\", \"description\": \"changed description\"}"
 
 Delete entry by id:
 > curl -X DELETE http://127.0.0.1:9090/todo/{id}
@@ -63,7 +63,7 @@ Get Specific Metric:
 - Add pagination to repository
 - Add filtering by status to repository
 - Deploy in Kubernetes
-- Better logs and add logging level
-- Integration Tests
+- Improve logs and add logging level
+- Add Integration Tests
 - Create a simple automated test, maybe using Postman?
-- Try to use something (Flyway or Liquibase) to create the database for the first time
+- Use Flyway or Liquibase to handle database creation
