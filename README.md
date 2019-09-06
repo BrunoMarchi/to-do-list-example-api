@@ -43,7 +43,7 @@ Create entry:
 Update existing entry, if it does not exist create a new one:
 > curl -X PUT http://127.0.0.1:9090/todo/{id} -H "Content-Type: application/json" -d "{\"description\" : \"test\", \"description\": \"changed description\"}"
 
-Get entry by id:
+Delete entry by id:
 > curl -X DELETE http://127.0.0.1:9090/todo/{id}
 
 Health Check:
